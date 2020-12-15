@@ -4,7 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <artifactId>lab2</artifactId>
     <version>${current-version}</version>
     <packaging>jar</packaging>
@@ -12,7 +11,7 @@
     <description>Web 4 year course - Oauth2</description>
 
     <parent>
-        <groupId>com.web.oauth</groupId>
+        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.0</version>
         <relativePath/>
@@ -43,7 +42,7 @@
         <dependency>
             <groupId>com.vk.api</groupId>
             <artifactId>sdk</artifactId>
-            <version>1.0.7'</version>
+            <version>1.0.7</version>
         </dependency>
     </dependencies>
 
