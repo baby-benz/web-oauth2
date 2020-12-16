@@ -10,13 +10,20 @@ git clone https://github.com/baby-benz/web-oauth2
 
 Первым делом из терминала запускаем удовлетворение всех зависимостей:
 
-```mvn install```
+```mvn install -DskipTests```
 
 В *application.properties* устанавливаем желаемый порт для Tomcat Web Server (по-умолчанию - 8080) и значения для id приложения и секретного кода:
 
 ```
 security.oauth2.app-id=*ваш_id*
 security.oauth2.client-secret=*ваш_код*
+```
+
+После этого собираем .jar-файл и запускаем (установленная версия JRE должна быть не ниже 11):
+
+```
+mvn package -DskipTests
+java -jar target/lab2-0.1.0.jar
 ```
 
 ### Supported endpoints
@@ -27,6 +34,7 @@ Endpoint      | Действие
 
 ## Built With
 
+* [JDK 11](https://www.oracle.com/ru/java/technologies/javase-jdk11-downloads.html)
 * [Spring Boot](https://spring.io/projects/spring-boot) - Web Framework
 * [VK Java SDK](https://vk.com/dev/Java_SDK) - Библиотека для взаимодействия с API ВКонтакте
 
