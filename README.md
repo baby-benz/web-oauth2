@@ -19,10 +19,16 @@ security.oauth2.app-id=*ваш_id*
 security.oauth2.client-secret=*ваш_код*
 ```
 
+### Supported endpoints
+
+Endpoint      | Действие
+------------- | ----------------------------------------------------
+/info         | Обновление секретного кода и вывод информации заного
+
 ## Built With
 
-* [Spring Boot](https://spring.io/projects/spring-boot) - 
-* [VK Java SDK](https://vk.com/dev/Java_SDK) - Test Framework
+* [Spring Boot](https://spring.io/projects/spring-boot) - Web Framework
+* [VK Java SDK](https://vk.com/dev/Java_SDK) - Библиотека для взаимодействия с API ВКонтакте
 
 ## Authors
 
