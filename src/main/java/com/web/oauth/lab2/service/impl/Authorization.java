@@ -1,4 +1,4 @@
-package com.web.oauth.lab2.service;
+package com.web.oauth.lab2.service.impl;
 
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.exceptions.ApiException;

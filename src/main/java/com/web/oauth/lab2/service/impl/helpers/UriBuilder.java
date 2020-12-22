@@ -1,4 +1,4 @@
-package com.web.oauth.lab2.service.helpers;
+package com.web.oauth.lab2.service.impl.helpers;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

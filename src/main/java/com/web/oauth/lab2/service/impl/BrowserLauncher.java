@@ -1,6 +1,6 @@
-package com.web.oauth.lab2.service;
+package com.web.oauth.lab2.service.impl;
 
-import com.web.oauth.lab2.service.helpers.UriBuilder;
+import com.web.oauth.lab2.service.impl.helpers.UriBuilder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
