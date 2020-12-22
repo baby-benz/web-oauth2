@@ -1,11 +1,12 @@
 package com.web.oauth.lab2.controller;
 
-import com.google.gson.JsonElement;
 import com.web.oauth.lab2.controller.exception.AuthenticationException;
-import com.web.oauth.lab2.service.contoller.MainControllerService;
-import com.web.oauth.lab2.service.helpers.UriBuilder;
+import com.web.oauth.lab2.controller.exception.EntityAlreadyExistsException;
+import com.web.oauth.lab2.service.impl.contoller.MainControllerService;
+import com.web.oauth.lab2.service.impl.helpers.UriBuilder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,18 +20,18 @@ public class MainController {
     private final MainControllerService mainControllerService;
     private final UriBuilder uriBuilder;
 
-    @GetMapping
+    @GetMapping(produces = MediaType.TEXT_PLAIN_VALUE)
     @ResponseBody
-    public JsonElement getUserInfo(@RequestParam String code) throws AuthenticationException {
+    public String getUserInfo(@RequestParam String code) throws AuthenticationException, EntityAlreadyExistsException {
         if (code == null) {
             throw AuthenticationException.createWith("code is not received");
         }
 
-        JsonElement element = mainControllerService.getMainInfo(code);
+        String fullName = mainControllerService.getMainInfo(code);
 
-        log.info("Returned user info: {}", element);
+        log.info("Returned user info: {}", fullName);
 
-        return element;
+        return fullName;
     }
 
     @GetMapping("/info")
