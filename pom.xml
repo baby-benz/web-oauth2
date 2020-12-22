@@ -27,6 +27,8 @@
         <spring.boot.starter.test>2.4.1</spring.boot.starter.test>
 
         <springfox.boot.starter>3.0.0</springfox.boot.starter>
+
+        <modelmapper.version>2.3.9</modelmapper.version>
     </properties>
 
     <dependencies>
@@ -90,6 +92,13 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox.boot.starter}</version>
+        </dependency>
+
+        <!-- Mapping dependency -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
         </dependency>
     </dependencies>
 

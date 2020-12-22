@@ -9,6 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
+    User getUserById(long id);
     Optional<User> findUserByUserId(int userId);
     Optional<User> findUserById(long id);
 }

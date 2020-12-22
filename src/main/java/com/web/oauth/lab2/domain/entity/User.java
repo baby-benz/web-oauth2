@@ -9,6 +9,7 @@ import java.util.Objects;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor
+@Setter
 @Getter
 @Entity
 public class User {
@@ -16,10 +17,8 @@ public class User {
     @Id
     private Long id;
     @NonNull
-    @Setter
     private int userId;
     @NonNull
-    @Setter
     private String fullName;
 
     @Override

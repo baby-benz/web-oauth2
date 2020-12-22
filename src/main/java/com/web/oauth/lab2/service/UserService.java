@@ -10,6 +10,8 @@ public interface UserService {
 
     User saveUser(User user) throws EntityAlreadyExistsException;
 
+    User getUser(long id);
+
     Optional<User> findUser(int userId);
 
     Optional<User> findUser(long id);

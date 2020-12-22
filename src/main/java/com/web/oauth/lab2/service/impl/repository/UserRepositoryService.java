@@ -17,6 +17,11 @@ public class UserRepositoryService implements UserService {
     private final UserRepository userRepository;
 
     @Override
+    public User getUser(long id) {
+        return userRepository.getUserById(id);
+    }
+
+    @Override
     public Optional<User> findUser(int userId) {
         return userRepository.findUserByUserId(userId);
     }
