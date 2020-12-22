@@ -25,6 +25,32 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * Обработчик исключения неверно переданного параметра запроса
+     *
+     * @param ex      Исключение
+     * @param request Запрос
+     * @return возвращаемая клиенту ResponseEntity
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    protected ResponseEntity<ApiError> handleEntityExistsException(IllegalArgumentException ex, WebRequest request) {
+        List<String> errors = Collections.singletonList("The server reported: " + ex.getMessage());
+        return handleExceptionInternal(ex, new ApiError(errors), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+    }
+
+    /**
+     * Обработчик исключения отсутствующей в базе данных сущности
+     *
+     * @param ex      Исключение
+     * @param request Запрос
+     * @return возвращаемая клиенту ResponseEntity
+     */
+    @ExceptionHandler(EntityAlreadyExistsException.class)
+    protected ResponseEntity<ApiError> handleEntityExistsException(EntityAlreadyExistsException ex, WebRequest request) {
+        List<String> errors = Collections.singletonList(ex.getMessage());
+        return handleExceptionInternal(ex, new ApiError(errors), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+    }
+
+    /**
      * Обработчик исключения аутентификации
      *
      * @param ex      Ошибка аутентификации
